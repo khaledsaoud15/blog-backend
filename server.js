@@ -9,7 +9,9 @@ app.use(express.json());
 app.use(cors());
 
 app.post("/api/v1/upload", upload.single("image"), (req, res) => {
-  const imageUrl = "http://localhost:3000/api/v1/uploads/" + req.file.filename;
+  const imageUrl =
+    "https://blog-backend-p9mg.onrender.com/api/v1/uploads/" +
+    req.file.filename;
   res.json({ url: imageUrl });
 });
 
